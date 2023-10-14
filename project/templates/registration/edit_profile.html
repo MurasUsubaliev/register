@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Редактирование данных</h2>
+<form method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Общие данные</legend>
+        {{ form.username.label_tag }} {{ form.username }}<br><br>
+        {{ form.email.label_tag }} {{ form.email }}<br><br>
+        {{ form.region.label_tag }} {{ form.region }}<br><br>
+        <a href="{% url 'change_password' %}">Сменить пароль</a><br><br>
+    </fieldset>
+    <button type="submit">Сохранить изменения</button>
+</form>
+{% endblock %}
